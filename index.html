@@ -18,3 +18,82 @@ cara membuat <b><i>homepage</i></b>.
     <li><a href="about.html">About</a></li>
     <li><a href="contact.html">Contact Us</a></li>
 </ul>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #1E3A8A; /* Biru */
+    color: white;
+    text-align: center;
+}
+
+header {
+    background-color: #FF8C00; /* Oranye */
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    background: linear-gradient(to right, #1E3A8A, #102A66);
+    padding: 100px 20px;
+    margin-top: 60px;
+}
+
+.hero .btn {
+    background-color: #FFA500;
+    color: #1E3A8A;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.hero .btn:hover {
+    background-color: #FF4500;
+}
+
+.content {
+    padding: 50px 20px;
+}
+
+.service-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: #102A66;
+    padding: 15px;
+    margin-top: 20px;
+}

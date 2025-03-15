@@ -1,56 +1,108 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perpustakaan Kadaffi</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>PERPUSTAKAAN KADAFFI</h1>
-        <nav>
-            <button onclick="location.href='index.html'">Beranda</button>
-            <button onclick="location.href='#'">Hubungi Kami</button>
-        </nav>
-    </header>
+/* Warna utama */
+:root {
+    --merah-tua: #5C1A1A;
+    --merah-coklat: #4D0E0E;
+    --cream: #F5E3C0;
+    --cream-tua: #E5C29F;
+    --teks-merah: #7C1F1F;
+}
 
-    <main>
-        <section class="data-pribadi">
-            <h2>Data Pribadi</h2>
-            <p>Halaman ini berisi tentang informasi pribadi saya</p>
-            <table>
-                <tr>
-                    <th>Informasi</th>
-                    <th>Detail</th>
-                </tr>
-                <tr>
-                    <td>Nama</td>
-                    <td>Kadaffi</td>
-                </tr>
-                <tr>
-                    <td>NIM</td>
-                    <td>220709024</td>
-                </tr>
-                <tr>
-                    <td>Program Studi</td>
-                    <td>Perpustakaan dan Sains Informasi</td>
-                </tr>
-                <tr>
-                    <td>Fakultas</td>
-                    <td>Ilmu Budaya</td>
-                </tr>
-                <tr>
-                    <td>Universitas</td>
-                    <td>Universitas Sumatera Utara</td>
-                </tr>
-            </table>
-            <a href="index.html" class="kembali">Kembali ke Beranda</a>
-        </section>
-    </main>
+/* Reset CSS */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--merah-coklat);
+    color: white;
+    text-align: center;
+}
 
-    <footer>
-        <p>© Kadaffi 2025</p>
-    </footer>
-</body>
-</html>
+/* Header */
+header {
+    background-color: var(--merah-tua);
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+/* Navigasi */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: var(--merah-tua);
+    padding: 10px;
+}
+
+nav button {
+    background-color: var(--cream-tua);
+    color: var(--teks-merah);
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+nav button:hover {
+    background-color: #D9B28C;
+}
+
+/* Konten Utama */
+main {
+    background-color: var(--cream);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    color: var(--teks-merah);
+}
+
+h2 {
+    color: var(--teks-merah);
+}
+
+/* Tabel */
+table {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid var(--teks-merah);
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--teks-merah);
+    color: white;
+}
+
+/* Link kembali */
+.kembali {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--teks-merah);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.kembali:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: var(--merah-tua);
+    padding: 10px;
+    margin-top: 20px;
+}

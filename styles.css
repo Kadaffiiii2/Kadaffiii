@@ -1,50 +1,82 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    
-    <link rel="stylesheet" href="style.css">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="container">
-        <h2>Contact Us</h2>
-        <p class="subtitle">Kami siap menerima kritik dan saran Anda.</p>
+/* Styling Global */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5e1da;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
 
-        <form id="contactForm">
-            <div class="input-group">
-                <label for="name">Nama</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required>
-            </div>
+/* Container */
+.container {
+    background: #8b5e3c;
+    color: #fff;
+    padding: 25px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 350px;
+    text-align: center;
+}
 
-            <div class="input-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required>
-            </div>
+/* Judul */
+h2 {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
 
-            <div class="input-group">
-                <label for="category">Jenis Pengaduan</label>
-                <select id="category" name="category" required>
-                    <option value="">Pilih jenis pengaduan</option>
-                    <option value="Kritik">Kritik</option>
-                    <option value="Saran">Saran</option>
-                </select>
-            </div>
+/* Subjudul */
+.subtitle {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 15px;
+}
 
-            <div class="input-group">
-                <label for="message">Pesan</label>
-                <textarea id="message" name="message" rows="4" placeholder="Tulis pesan Anda di sini..." required></textarea>
-            </div>
+/* Input Group */
+.input-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
 
-            <button type="submit">Kirim Pesan</button>
-        </form>
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
 
-        <p id="responseMessage"></p>
-    </div>
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #f8ebe6;
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+textarea {
+    resize: none;
+}
+
+/* Tombol */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #C39D7A;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #C39D7A;
+}
+
+/* Pesan respons */
+#responseMessage {
+    margin-top: 10px;
+    font-size: 14px;
+}

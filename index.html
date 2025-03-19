@@ -10,19 +10,19 @@
 
         /* Styling untuk halaman */
         body {
-            font-family: 'Poppins', sans-serif; /* Mengubah semua teks menjadi Poppins */
-            background-color: #E2CEB1; /* Warna cream */
+            font-family: 'Poppins', sans-serif;
+            background-color: #E2CEB1;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
         }
 
-        /* Container utama agar konten tidak full page */
+        /* Container utama */
         .container {
             width: 80%;
             max-width: 1000px;
-            background-color: #E2CEB1; /* Warna cream agar menyatu */
+            background-color: #E2CEB1;
             padding: 20px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             margin: 20px 0;
@@ -60,17 +60,78 @@
             font-weight: bold;
         }
 
-        /* Styling untuk teks "HALLO SEMUA!!!" dan "Selamat Berkunjung!!" */
-        .greeting, .welcome-text {
-            color: #4B3619; /* Warna coklat tua */
-            font-weight: 700;
-            text-align: left; /* Rata kiri */
+        /* Book Recommendations */
+        .book-section {
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
+        }
+
+        .book-section h2 {
+            text-align: center;
+            color: #4B3619;
+        }
+
+        .book-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .book-card {
+            background: #fdfdfd;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 220px;
+        }
+
+        .book-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .book-title {
+            font-weight: bold;
+            margin: 10px 0 5px;
+        }
+
+        .book-author {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .book-description {
+            font-size: 12px;
+            margin: 5px 0 10px;
+            color: #777;
+        }
+
+        .download-btn {
+            display: block;
+            padding: 8px;
+            background: #4B3619;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .download-btn:hover {
+            background: #362511;
         }
 
         /* Footer */
         footer {
             background-color: #4B3619;
-            height: 30px; /* Mengurangi tinggi footer */
+            height: 30px;
             border-radius: 0 0 8px 8px;
         }
     </style>
@@ -90,16 +151,77 @@
         </header>
 
         <main>
-            <h2 class="greeting">Hallo! Selamat Datang di Perpustakaan Kadaffi </h2>
-            <p>Selamat datang di website resmi perpustakaan kami. Website ini kami sediakan untuk memudahkan Anda dalam mencari katalog buku, mengetahui jadwal operasional, serta mendapatkan rekomendasi bacaan terbaik.</p>
+            <h2>Hallo! Selamat Datang di Perpustakaan Kadaffi</h2>
+            <p>Website ini menyediakan katalog buku terbaik untuk meningkatkan wawasan dan pengetahuan Anda.</p>
 
-            <p>Kami juga berkolaborasi dengan perpustakaan lain untuk menyediakan lebih banyak sumber bacaan
-            <a href="https://lib.ui.ac.id" target="_blank">Perpustakaan Universitas Indonesia (UI)</a> yang dapat meningkatkan wawasan dan pengetahuan.</p>
-
-            <p class="welcome-text">Selamat Berkunjung!!</p>
+            <!-- Book Recommendations -->
+            <section class="book-section">
+                <h2>Book Recommendations</h2>
+                <div class="book-container" id="book-list"></div>
+            </section>
         </main>
 
         <footer></footer>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const books = [
+                {
+                    title: "The Subtle Art of Not Giving a F*ck",
+                    author: "Mark Manson",
+                    description: "Pendekatan hidup dengan menerima keterbatasan dan ketidaksempurnaan.",
+                    cover: "https://m.media-amazon.com/images/I/71QKQ9mwV7L.jpg",
+                    file: "https://drive.google.com/file/d/1MmDJxq5Ai79g2K8Hg-YwuVOvKP4qb8mT/view?usp=drivesdk"
+                },
+                {
+                    title: "Rich Dad Poor Dad",
+                    author: "Robert Kiyosaki",
+                    description: "Pelajaran keuangan dari dua figur ayah yang berbeda.",
+                    cover: "https://m.media-amazon.com/images/I/81bsw6fnUiL.jpg",
+                    file: "https://drive.google.com/file/d/1MkWfM-S075XMs_tHclD340QiJN_210NL/view?usp=sharing"
+                },
+                {
+                    title: "Think and Grow Rich",
+                    author: "Napoleon Hill",
+                    description: "Formula sukses berdasarkan pola pikir dan kebiasaan.",
+                    cover: "https://m.media-amazon.com/images/I/71UypkUjStL.jpg",
+                    file: "https://drive.google.com/file/d/1MkdhNi-LzfK5pBekQ4PxRQFwYD8k7Bc1/view?usp=sharing"
+                },
+                   
+                {   title: "Atomic Habits", 
+                     author: "James Clear", 
+                   description: "Membangun kebiasaan baik.", 
+                   cover: "https://m.media-amazon.com/images/I/91bYsX41DVL.jpg", 
+                   file: "https://drive.google.com/file/d/1MrzVmz8G2gJ4R6PJWxtfwwJVnCww7BDK/view?usp=sharing" 
+                },
+
+                 { title: "Sapiens", 
+                  author: "Yuval Noah Harari", 
+                  description: "Sejarah singkat manusia dari awal peradaban.", 
+                  cover: "https://m.media-amazon.com/images/I/713jIoMO3UL.jpg", 
+                  file: "https://drive.google.com/file/d/1Ms1l9amiEeSGSRqkh48HuM39oS-7uxRQ/view?usp=sharing" 
+                 },
+            ];
+
+            const bookList = document.getElementById("book-list");
+
+            books.forEach(book => {
+                const bookCard = document.createElement("div");
+                bookCard.classList.add("book-card");
+
+                bookCard.innerHTML = `
+                    <img src="${book.cover}" alt="${book.title}">
+                    <h3 class="book-title">${book.title}</h3>
+                    <p class="book-author">by ${book.author}</p>
+                    <p class="book-description">${book.description}</p>
+                    <a href="${book.file}" target="_blank" class="download-btn">Download PDF</a>
+                `;
+
+                bookList.appendChild(bookCard);
+            });
+        });
+    </script>
+
 </body>
 </html>

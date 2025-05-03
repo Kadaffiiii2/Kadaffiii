@@ -128,6 +128,64 @@
             background: #362511;
         }
 
+        /* Event Section */
+        .event-section {
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.2);
+        }
+
+        .event-section h2 {
+            text-align: center;
+            color: #4B3619;
+        }
+
+        .event-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .event-card {
+            background: #fdfdfd;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 220px;
+        }
+
+        .event-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .event-title {
+            margin: 10px 0;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .event-link {
+            display: block;
+            padding: 8px;
+            background: #4B3619;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        .event-link:hover {
+            background: #362511;
+        }
+
         /* Footer */
         footer {
             background-color: #4B3619;
@@ -159,6 +217,12 @@
                 <h2>Book Recommendations</h2>
                 <div class="book-container" id="book-list"></div>
             </section>
+
+            <!-- Event Section -->
+            <section class="event-section">
+                <h2>Event Terkini</h2>
+                <div class="event-container" id="event-list"></div>
+            </section>
         </main>
 
         <footer></footer>
@@ -166,6 +230,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            // Data buku
             const books = [
                 {
                     title: "The Subtle Art of Not Giving a F*ck",
@@ -188,24 +253,50 @@
                     cover: "https://m.media-amazon.com/images/I/71UypkUjStL.jpg",
                     file: "https://drive.google.com/file/d/1MkdhNi-LzfK5pBekQ4PxRQFwYD8k7Bc1/view?usp=sharing"
                 },
-                   
-                {   title: "Atomic Habits", 
-                     author: "James Clear", 
-                   description: "Membangun kebiasaan baik dari hal-hal kecil.", 
-                   cover: "https://m.media-amazon.com/images/I/91bYsX41DVL.jpg", 
-                   file: "https://drive.google.com/file/d/1MrzVmz8G2gJ4R6PJWxtfwwJVnCww7BDK/view?usp=sharing" 
+                {   
+                    title: "Atomic Habits", 
+                    author: "James Clear", 
+                    description: "Membangun kebiasaan baik dari hal-hal kecil.", 
+                    cover: "https://m.media-amazon.com/images/I/91bYsX41DVL.jpg", 
+                    file: "https://drive.google.com/file/d/1MrzVmz8G2gJ4R6PJWxtfwwJVnCww7BDK/view?usp=sharing" 
                 },
+                { 
+                    title: "Sapiens", 
+                    author: "Yuval Noah Harari", 
+                    description: "Sejarah singkat manusia dari awal peradaban.", 
+                    cover: "https://m.media-amazon.com/images/I/713jIoMO3UL.jpg", 
+                    file: "https://drive.google.com/file/d/1Ms1l9amiEeSGSRqkh48HuM39oS-7uxRQ/view?usp=sharing" 
+                }
+            ];
 
-                 { title: "Sapiens", 
-                  author: "Yuval Noah Harari", 
-                  description: "Sejarah singkat manusia dari awal peradaban.", 
-                  cover: "https://m.media-amazon.com/images/I/713jIoMO3UL.jpg", 
-                  file: "https://drive.google.com/file/d/1Ms1l9amiEeSGSRqkh48HuM39oS-7uxRQ/view?usp=sharing" 
-                 },
+            // Data event
+            const events = [
+                {
+                    title: "Lomba Karya Tulis Ilmiah & Poster",
+                    image: "https://i.imgur.com/7pDtl9S.jpeg",
+                    link: "https://www.instagram.com/p/DH5v_rsTEV6/?igsh=ajJtdzdwYWQydzUx"
+                },
+                {
+                    title: "Lomba Eco Accounting: Business Model Canvas",
+                    image: "https://i.imgur.com/9XhcD1B.jpeg",
+                    link: "https://www.instagram.com/p/DHSfJVspH0K/?igsh=bWE0Z2hibm9jbmpz"
+                },
+                {
+                    title: "Lomba Esay Nasional",
+                    image: "https://i.imgur.com/AeSg9va.jpeg",
+                    link: "https://www.instagram.com/p/DHj8wJDzdr4/?igsh=bThlamxuajZ2dHo5"
+                },
+                {
+                    title: "Lomba Video Kreatif Akuntansi",
+                    image: "https://i.imgur.com/uGljZYU.jpeg",
+                    link: "https://www.instagram.com/p/DIL8op8TGpx/?igsh=Yjh4aHBhaDI4aGwx"
+                }
             ];
 
             const bookList = document.getElementById("book-list");
+            const eventList = document.getElementById("event-list");
 
+            // Render buku
             books.forEach(book => {
                 const bookCard = document.createElement("div");
                 bookCard.classList.add("book-card");
@@ -219,36 +310,22 @@
                 `;
 
                 bookList.appendChild(bookCard);
-            <!-- EVENT PERPUSTAKAAN -->
-<div class="rekomendasi fade-in">
-    <h3>Event Terkini</h3>
-    <div class="buku-container">
-        <div class="buku">
-            <img src="https://i.imgur.com/7pDtl9S.jpeg" alt="Event 1">
-            <p>Event: Lomba Karya Tulis Ilmiah & Poster</p>
-            <a href="https://www.instagram.com/p/DH5v_rsTEV6/?igsh=ajJtdzdwYWQydzUx" target="_blank">Lihat</a>
-        </div>
-        <div class="buku">
-            <img src="https://i.imgur.com/9XhcD1B.jpeg" alt="Event 2">
-            <p>Event: Lomba Eco Accounting: Business Model Canvas</p>
-            <a href="https://www.instagram.com/p/DHSfJVspH0K/?igsh=bWE0Z2hibm9jbmpz" target="_blank">Lihat</a>
-        </div>
-        <div class="buku">
-            <img src="https://i.imgur.com/AeSg9va.jpeg" alt="Event 3">
-            <p>Event: Lomba Esay Nasional</p>
-            <a href="https://www.instagram.com/p/DHj8wJDzdr4/?igsh=bThlamxuajZ2dHo5" target="_blank">Lihat</a>
-        </div>
-        <div class="buku">
-            <img src="https://i.imgur.com/uGljZYU.jpeg" alt="Event 4">
-            <p>Event: Lomba Video Kreatif Akuntansi</p>
-            <a href="https://www.instagram.com/p/DIL8op8TGpx/?igsh=Yjh4aHBhaDI4aGwx" target="_blank">Lihat</a>
-        </div>
-    </div>
-</div>
+            });
 
+            // Render event
+            events.forEach(event => {
+                const eventCard = document.createElement("div");
+                eventCard.classList.add("event-card");
+
+                eventCard.innerHTML = `
+                    <img src="${event.image}" alt="${event.title}">
+                    <p class="event-title">${event.title}</p>
+                    <a href="${event.link}" target="_blank" class="event-link">Lihat Detail</a>
+                `;
+
+                eventList.appendChild(eventCard);
             });
         });
     </script>
-
 </body>
 </html>

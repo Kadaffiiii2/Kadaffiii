@@ -1,3 +1,4 @@
+
 /* Styling Global */
 body {
     font-family: 'Poppins', sans-serif;
@@ -76,7 +77,4 @@ button:hover {
 }
 
 /* Pesan respons */
-#responseMessage {
-    margin-top: 10px;
-    font-size: 14px;
-}
+#responseMessage
